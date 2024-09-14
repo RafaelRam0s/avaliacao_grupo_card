@@ -1,0 +1,166 @@
+<% const url_site_externo = 'https://www.grupocard.com.br/'; %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Meta dados -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Rafael Ramos da Silva" />
+    <meta name="description" content="<%= descricao %>" />
+    <meta name="keywords" content="<%= palavras_chaves %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="license" href="/LICENSE" />
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="<%= url_site_externo %>">
+    <meta property="og:title" content="<%= titulo %>">
+    <meta property="og:site_name" content="<%= titulo %>">
+    <meta property="og:description" content="<%= descricao %>">
+    <meta property="og:image" content="<%= url_site_externo %>/image/poster-video-blog.jpg">
+    <meta property="og:url" content="<%= url_site_externo %>">
+
+    <!-- Aba do navegador -->
+    <link rel="icon" href="<%= url_site_externo %>/image/ico/favicon-32x32.png" type="image/x-icon" />
+    <title><%= titulo %></title>
+
+    <!-- Folhas de estilo -->
+    <link rel="stylesheet" href="/css/style.css" media="all" /> 
+    
+    <!-- Font Awesome linkado externamente: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css"> 
+</head>
+<body>
+
+    <!-- Tela principal -->
+    <div id="pagina_principal">
+
+        <header id="cabecalho">
+            <div id="cabecalho_organizado">
+                <div><a href="/"><img class="logo_card" width="110px" height="30.13px" src="<%= url_site_externo %>/image/logos/card/logo-card-laranja.webp" alt="Logo Card"></a></div>
+
+                <nav id="menu_navegacao" class="display_none_768">
+                    <div><a href="https://www.grupocard.com.br/ofereca">Benefícios</a></div>
+                    <div class="aba_de_links"><span>Serviços <i class="fa-solid fa-caret-down"></i></span>
+                        <div>
+                            <div>
+                                <a href="https://cardhub.grupocard.com.br/" target="_blank">
+                                    <img width="25px" height="25px" src="<%= url_site_externo %>/image/new-home/solucoes-para-voce/icone-cardhub.svg" alt="Seja CardHub">
+                                    <span>CardHub</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.grupocard.com.br/maquininhas">
+                                    <img width="25px" height="25px" src="<%= url_site_externo %>/image/new-home/solucoes-para-voce/icone-maquininha.svg" alt="Obtenha a Sua Maquininha Card">
+                                    <span>Maquininhas</span>
+                                </a>
+                            </div>
+                            <div style="margin: 0px;">
+                                <a href="https://www.grupocard.com.br/campanhas/2021/coban">CobanCard</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div><a href="https://www.grupocard.com.br/sobre">Quem somos?</a></div>
+                    <div><a href="https://www.grupocard.com.br/blog">Blog</a></div>
+                    <div class="menu_login">
+                        <a class="botao_quero_fluxo" href="/#quero_fluxo">Quero <span>+fluxo</span></a>
+                        <a href="https://recarga.grupocard.com.br/#/login">Entrar</a>
+                    </div>
+                </nav>
+
+                <div id="menu_hamburguer">
+                    <button id="menu_abrir" type="button" onclick="expandirMenu()" title="Abrir menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button id="menu_fechar" style="display: none;" type="button" onclick="recolherMenu()" title="Fechar menu">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="corpo_principal">
+            <div id="conteudo_principal">
+                <%- include(arquivo_a_carregar) %>
+            </div>
+        </main>
+
+        <footer id="rodape">
+            <div>
+                <div id="area_bordao">
+                    <a href="/"><img class="logo_card" width="110px" height="30.13px" src="<%= url_site_externo %>/image/logos/card/logo-card-laranja.webp" alt="Logo Card"></a>
+                    <span>É tudo isso. <br /> É muito mais</span>
+                </div>
+                <hr />
+                <div id="area_informacoes">
+                    <div>
+                        <h4>Navegação</h4>
+                        <nav>
+                            <div><a href="https://www.grupocard.com.br/ofereca">Benefícios</a></div>
+                            <div><a href="https://cardhub.grupocard.com.br/" target="_blank">CardHub</a></div>
+                            <div><a href="https://www.grupocard.com.br/maquininhas">Maquininhas</a></div>
+                            <div><a href="https://www.grupocard.com.br/campanhas/2021/coban">CobanCard</a></div>
+                            <div><a href="https://www.grupocard.com.br/sobre">Quem somos?</a></div>
+                            <div><a href="https://www.grupocard.com.br/blog">Blog</a></div>
+                            <div><a href="/#quero_fluxo">Quero +fluxo</a></div>
+                            <div><a href="https://recarga.grupocard.com.br/#/login">Entrar</a></div>
+                        </nav>
+                    </div>
+                    <div>
+                        <h4>Fale Conosco</h4>
+    
+                        <div>
+                            <a href="https://api.whatsapp.com/send?phone=551130033304&text=Ol%C3%A1"><i class="fa-solid fa-phone-volume"></i> <i class="fa-brands fa-whatsapp fa-lg"></i> +55 (011) 3003-3304</a>
+                            <p>
+                                Segunda a sexta das 07:00 ás 19:40
+                                <br /> Sábado das 08:00 ás 14:20 * Horário de Brasília
+                            </p>
+    
+                            <div>
+                                <a href="https://www.contatoseguro.com.br/grupocard">
+                                    <h5>Canal de Ouvidoria/Denúncias</h5>
+                                    <p>Contato Seguro - 24h/7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Siga a Card</h4>
+    
+                        <div>
+                            <a class="text_center" href="https://www.instagram.com/grupocard/" target="_blank" rel="nofollow">
+                                <img width="35px" height="35px" src="<%= url_site_externo %>/image/icones/redes-sociais/instagram.svg" alt="Siga a Card no Instagram">
+                            </a>
+                            <a class="text_center" href="https://www.youtube.com/channel/UCtBDr_BJXvlvwnni2Fz9VOg" target="_blank" rel="nofollow"> 
+                                <img width="35px" height="35px" src="<%= url_site_externo %>/image/icones/redes-sociais/youtube.svg" alt="Inscreva-se no Youtube da Card">
+                            </a>
+                            <a class="text_center" href="https://www.linkedin.com/company/grupocardoficial/posts/?feedView=all" target="_blank" rel="nofollow">
+                                <img width="35px" height="35px" src="<%= url_site_externo %>/image/icones/redes-sociais/linkedin.svg" alt="Siga a Card no Linkedin">
+                            </a>
+                            <a class="text_center" href="https://www.facebook.com/grupocardoficial/?locale=pt_BR" target="_blank" rel="nofollow">
+                                <img width="35px" height="35px" src="<%= url_site_externo %>/image/icones/redes-sociais/facebook.svg" alt="Siga a Card no Facebook">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div id="area_copyright">
+                    
+                    <%
+                        // Cria um objeto Date para a data e hora atual
+                        let data_atual = new Date();
+    
+                        // Formatar a data com o fuso horário de São Paulo
+                        let data_opcoes = { timeZone: 'America/Sao_Paulo', year: 'numeric' };
+                        let data_formatacao = new Intl.DateTimeFormat('pt-BR', data_opcoes);
+                        let ano_atual = data_formatacao.format(data_atual);
+                    %>
+                    <p>&#169; <%= ano_atual %> Grupo Card. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>    
+    </div>
+    
+    <!-- Scripts -->
+    <script src="/javascript/script.js"></script>
+
+</body>
+</html>

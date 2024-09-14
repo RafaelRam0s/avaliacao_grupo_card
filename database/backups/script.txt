@@ -1,0 +1,13 @@
+CREATE DATABASE db_grupo_card;
+USE db_grupo_card;
+CREATE TABLE IF NOT EXISTS inscritos_fluxo (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    email VARBINARY(1000) NOT NULL UNIQUE,
+    numero_contato VARCHAR(31) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    localizacao VARCHAR(255) NOT NULL,
+    cpf VARCHAR(15) NOT NULL,
+    divulgado_por VARCHAR(255) NOT NULL,
+    assinado_politica_de_privacidade DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

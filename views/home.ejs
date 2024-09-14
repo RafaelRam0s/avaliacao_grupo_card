@@ -1,0 +1,220 @@
+
+
+<style>
+    
+    #quero_fluxo {
+        background-color: var(--cor_01);
+        background-image: url('https://www.grupocard.com.br/image/new-maquininhas/banner/bg-maq-1920.webp');
+        background-repeat: no-repeat;
+        background-position: -15% center;
+        background-size: cover;
+    }
+    #quero_fluxo form {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--cor_02);
+        border-radius: 8px;
+        box-shadow: var(--sombreamento_02);
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+    #quero_fluxo form span {
+        color: var(--cor_01);
+        font-weight: 900;
+    }
+    #quero_fluxo form h2 {
+        text-align: center;
+        margin: 8px;
+    }
+    
+    #quero_fluxo form p {
+        text-align: center;
+        margin: 8px;
+    }
+
+    #quero_fluxo div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+    }
+
+    #quero_fluxo label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: var(--cor_05);
+    }
+
+    #quero_fluxo input[type="email"],
+    #quero_fluxo input[type="tel"],
+    #quero_fluxo input[type="text"],
+    #quero_fluxo select {
+        padding: 10px;
+        border: 1px solid var(--cor_05);
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    #quero_fluxo input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    #quero_fluxo input[type="checkbox"] + label {
+        font-size: 14px;
+        color: var(--cor_07);
+    }
+
+    #quero_fluxo input[type="checkbox"] + label a {
+        color: var(--cor_01);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    #quero_fluxo input[type="checkbox"] + label a:hover {
+        text-decoration: underline;
+    }
+    #quero_fluxo input[type="email"]:focus,
+    #quero_fluxo input[type="tel"]:focus,
+    #quero_fluxo input[type="text"]:focus,
+    #quero_fluxo select:focus {
+        border-color: var(--cor_01);
+        outline: none;
+    }
+
+    #quero_fluxo input::placeholder {
+        color: var(--cor_04);
+    }
+
+    #quero_fluxo button {
+        background-color: var(--cor_01);
+        color: var(--cor_02);
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: var(--cor_01);
+    }
+
+    @media all and (max-width: 768px) {
+        #quero_fluxo form {
+            margin-left: 0px;
+        }
+    }
+</style>
+
+
+<div class="banner">
+    <div class="banner_texto"></div>
+</div>
+
+<div></div>
+
+
+<div id="quero_fluxo">
+    <div>
+        <form action="/quero_fluxo" method="post">
+            <div>
+                <h2>Seja <span>+card</span> Tenha <span>+cliente</span></h2>
+                <p>Preencha os dados e seja <span>+fluxo</span> com nossos serviços</p>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" minlength="3" maxlength="255" required="required" placeholder="exemplo@grupocard.com.br" />
+            </div>
+            <div>
+                <label for="contato">Número de contato:</label>
+                <input type="tel" name="contato" id="contato" minlength="8" maxlength="20" required="required" placeholder="+55 (011) 91234-5678" onkeyup="handlePhone(event)" />
+            </div>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" minlength="1" maxlength="255" required="required" placeholder="GrupoCard" />
+            </div>
+            <div>
+                <label for="localizacao">Localização:</label>
+                <input type="text" name="localizacao" id="localizacao" minlength="1" maxlength="255" required="required" placeholder="Cidade, Estado" />
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" minlength="14" maxlength="14" required="required" placeholder="123.456.789-00"  onkeyup="handleCPF(event)" />
+            </div>
+            <div>
+                <label for="local_divulgado">Como nos descobriu?</label>
+                <select id="local_divulgado" name="local_divulgado" required="required">
+                    <option value="">Por onde nos conheceu?</option>
+                    <option value="E-mail">E-mail</option>
+                    <option value="Google">Google</option>
+                    <option value="Youtube">Youtube</option>
+                    <option value="Outros">Outros</option>
+                    <option value="Indicação de um amigo ou familiar">Indicação de um amigo ou familiar</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Visita do Vendedor">Visita do Vendedor</option>
+                    <option value="QRCODE na maquininha">QRCODE na maquininha</option>
+                </select>
+            </div>
+            <div id="campo_extra_outros" style="display: none;">
+                <label for="outros">Por onde foi?</label>
+                <input type="text" name="outros" id="outros" maxlength="255" />
+            </div>
+            <div style="flex-direction: row;">
+                <input type="checkbox" name="politica_de_privacidade" id="politica_de_privacidade" value="true">
+                
+                <label for="politica_de_privacidade">Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, conforme descrito nesta <a href="https://www.grupocard.com.br/politica-de-privacidade" target="_blank">Política de Privacidade</a>*</label>
+            </div>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectElement = document.getElementById('local_divulgado');
+        const outrosDiv = document.getElementById('campo_extra_outros');
+
+        selectElement.addEventListener('change', function () {
+            if (selectElement.value === 'Outros') {
+                outrosDiv.style.display = 'inline-block';
+            } else {
+                outrosDiv.style.display = 'none';
+            }
+        });
+    });
+
+    const handlePhone = (event) => {
+        let input = event.target
+        input.value = phoneMask(input.value)
+    }
+
+    const phoneMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g,'')
+        value = value.replace(/(\d{2})(\d)/,"+$1 $2")
+        value = value.replace(/(\d{3})(\d)/,"($1) $2")
+        value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+        return value
+    }
+
+    const handleCPF = (event) => {
+        let input = event.target
+        input.value = cpfMask(input.value)
+    }
+    const cpfMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g,'')
+        value = value.replace(/(\d{3})(\d)/,"$1.$2")
+        value = value.replace(/(\d{3})(\d)/,"$1.$2")
+        value = value.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+
+        return value
+    }
+</script>
