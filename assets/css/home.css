@@ -1,0 +1,200 @@
+
+@charset "UTF-8";
+
+/* Formulário Quero fluxo */
+#quero_fluxo {
+    background-color: var(--cor_09);
+    padding: 40px 20px;
+}
+#quero_fluxo form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor_02);
+    border-radius: 8px;
+    box-shadow: var(--sombreamento_02);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+#quero_fluxo span {
+    color: var(--cor_01);
+    font-weight: 900;
+}
+#quero_fluxo h2 {
+    text-align: center;
+    margin: 8px;
+}
+
+#quero_fluxo form p {
+    text-align: center;
+    margin: 8px;
+}
+
+#quero_fluxo div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+#quero_fluxo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--cor_05);
+}
+
+#quero_fluxo input[type="email"],
+#quero_fluxo input[type="tel"],
+#quero_fluxo input[type="text"],
+#quero_fluxo select {
+    padding: 10px;
+    border: 1px solid var(--cor_05);
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#quero_fluxo input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#quero_fluxo input[type="checkbox"] + label {
+    font-size: 14px;
+    color: var(--cor_07);
+}
+
+#quero_fluxo input[type="checkbox"] + label a {
+    color: var(--cor_01);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#quero_fluxo input[type="checkbox"] + label a:hover {
+    text-decoration: underline;
+}
+#quero_fluxo input[type="email"]:focus,
+#quero_fluxo input[type="tel"]:focus,
+#quero_fluxo input[type="text"]:focus,
+#quero_fluxo select:focus {
+    border-color: var(--cor_01);
+    outline: none;
+}
+
+#quero_fluxo input::placeholder {
+    color: var(--cor_04);
+}
+
+#quero_fluxo button {
+    background-color: var(--cor_01);
+    color: var(--cor_02);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--cor_01);
+}
+
+@media all and (max-width: 768px) {
+    #quero_fluxo form {
+        margin-left: 0px;
+    }
+}
+
+/*
+    Banner simples
+    + Descrição benefícios
+*/
+
+.banner_simple {
+    background-color: var(--cor_01);
+    background-image: url('https://www.grupocard.com.br/image/new-home/banners/maquininhas/maquininhas-card.webp');
+    background-position: right top;
+    background-repeat: no-repeat;
+    color: var(--cor_02);
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: var(--sombreamento_01);
+}
+
+.banner_simple h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.banner_simple p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.banner_button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--cor_06);
+    color: var(--cor_02);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.banner_button:hover {
+    background-color: var(--cor_07);
+}
+
+.beneficios {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.beneficio_item {
+    background-color: var(--cor_03);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: var(--sombreamento_02);
+}
+
+.beneficio_item h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .banner_simple h1 {
+        font-size: 2em;
+    }
+
+    .banner_simple p {
+        font-size: 1em;
+    }
+
+    .beneficios h2 {
+        font-size: 1.5em;
+    }
+
+    .beneficio_item h3 {
+        font-size: 1.2em;
+    }
+
+    .banner_simple .container {
+        background-color: rgba(57, 82, 104, 0.8);
+        display: inline-block;
+        padding: 10px;
+    }
+}
+
+
+#offers {
+    text-align: center;
+}

@@ -1,128 +1,38 @@
 
+<link rel="stylesheet" href="/css/home.css">
 
-<style>
-    
-    #quero_fluxo {
-        background-color: var(--cor_01);
-        background-image: url('https://www.grupocard.com.br/image/new-maquininhas/banner/bg-maq-1920.webp');
-        background-repeat: no-repeat;
-        background-position: -15% center;
-        background-size: cover;
-    }
-    #quero_fluxo form {
-        display: flex;
-        flex-direction: column;
-        background-color: var(--cor_02);
-        border-radius: 8px;
-        box-shadow: var(--sombreamento_02);
-        width: 100%;
-        max-width: 600px;
-        padding: 20px;
-        box-sizing: border-box;
-        margin: 10px;
-    }
-    #quero_fluxo form span {
-        color: var(--cor_01);
-        font-weight: 900;
-    }
-    #quero_fluxo form h2 {
-        text-align: center;
-        margin: 8px;
-    }
-    
-    #quero_fluxo form p {
-        text-align: center;
-        margin: 8px;
-    }
+<section class="banner_simple">
+    <div class="container">
+        <h1>Aumente o fluxo do seu estabelecimento.</h1>
+        <p>Seja um parceiro Card agora mesmo.</p>
+        <a href="/#quero_fluxo" class="banner_button">Quero +fluxo</a>
+    </div>
+</section>
 
-    #quero_fluxo div {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 8px;
-    }
-
-    #quero_fluxo label {
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: var(--cor_05);
-    }
-
-    #quero_fluxo input[type="email"],
-    #quero_fluxo input[type="tel"],
-    #quero_fluxo input[type="text"],
-    #quero_fluxo select {
-        padding: 10px;
-        border: 1px solid var(--cor_05);
-        border-radius: 4px;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
-
-    #quero_fluxo input[type="checkbox"] {
-        margin-right: 10px;
-    }
-
-    #quero_fluxo input[type="checkbox"] + label {
-        font-size: 14px;
-        color: var(--cor_07);
-    }
-
-    #quero_fluxo input[type="checkbox"] + label a {
-        color: var(--cor_01);
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    #quero_fluxo input[type="checkbox"] + label a:hover {
-        text-decoration: underline;
-    }
-    #quero_fluxo input[type="email"]:focus,
-    #quero_fluxo input[type="tel"]:focus,
-    #quero_fluxo input[type="text"]:focus,
-    #quero_fluxo select:focus {
-        border-color: var(--cor_01);
-        outline: none;
-    }
-
-    #quero_fluxo input::placeholder {
-        color: var(--cor_04);
-    }
-
-    #quero_fluxo button {
-        background-color: var(--cor_01);
-        color: var(--cor_02);
-        border: none;
-        padding: 10px;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    button:hover {
-        background-color: var(--cor_01);
-    }
-
-    @media all and (max-width: 768px) {
-        #quero_fluxo form {
-            margin-left: 0px;
-        }
-    }
-</style>
-
-
-<div class="banner">
-    <div class="banner_texto"></div>
-</div>
-
-<div></div>
+<section class="beneficios">
+    <div>
+        <h2>Benefícios de Ser um Parceiro Card</h2>
+        <div class="beneficio_item">
+            <h3>Mais Visibilidade</h3>
+            <p>Seu estabelecimento será visto por mais clientes em potencial.</p>
+        </div>
+        <div class="beneficio_item">
+            <h3>Aumento nas Vendas</h3>
+            <p>Promoções exclusivas e ofertas para atrair mais clientes.</p>
+        </div>
+        <div class="beneficio_item">
+            <h3>Suporte Dedicado</h3>
+            <p>Equipe pronta para ajudar e garantir seu sucesso.</p>
+        </div>
+    </div>
+</section>
 
 
 <div id="quero_fluxo">
+    <h2>Seja <span>+card</span> Tenha <span>+cliente</span></h2>
     <div>
         <form action="/quero_fluxo" method="post">
             <div>
-                <h2>Seja <span>+card</span> Tenha <span>+cliente</span></h2>
                 <p>Preencha os dados e seja <span>+fluxo</span> com nossos serviços</p>
             </div>
             <div>
@@ -171,50 +81,11 @@
                 <label for="politica_de_privacidade">Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, conforme descrito nesta <a href="https://www.grupocard.com.br/politica-de-privacidade" target="_blank">Política de Privacidade</a>*</label>
             </div>
     
-            <button type="submit">Enviar</button>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
         </form>
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const selectElement = document.getElementById('local_divulgado');
-        const outrosDiv = document.getElementById('campo_extra_outros');
-
-        selectElement.addEventListener('change', function () {
-            if (selectElement.value === 'Outros') {
-                outrosDiv.style.display = 'inline-block';
-            } else {
-                outrosDiv.style.display = 'none';
-            }
-        });
-    });
-
-    const handlePhone = (event) => {
-        let input = event.target
-        input.value = phoneMask(input.value)
-    }
-
-    const phoneMask = (value) => {
-        if (!value) return ""
-        value = value.replace(/\D/g,'')
-        value = value.replace(/(\d{2})(\d)/,"+$1 $2")
-        value = value.replace(/(\d{3})(\d)/,"($1) $2")
-        value = value.replace(/(\d)(\d{4})$/,"$1-$2")
-        return value
-    }
-
-    const handleCPF = (event) => {
-        let input = event.target
-        input.value = cpfMask(input.value)
-    }
-    const cpfMask = (value) => {
-        if (!value) return ""
-        value = value.replace(/\D/g,'')
-        value = value.replace(/(\d{3})(\d)/,"$1.$2")
-        value = value.replace(/(\d{3})(\d)/,"$1.$2")
-        value = value.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
-
-        return value
-    }
-</script>
+<script type="text/javascript" src="javascript/home.js"></script>

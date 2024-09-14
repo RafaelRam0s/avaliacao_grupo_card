@@ -15,17 +15,16 @@
 - Observações:
     Visto que a vaga tem como foco o desenvolvimento web voltado para o design não utilizei grandes bibliotecas como Angular ou React, de forma a demonstrar meus conhecimentos na criação e configuração de arquivos, mas caso precisasse estaria disposto a utilizar estas ferramentas. Também não utilizei bibliotecas como Bootstrap, Ajax ou Jquery de forma a demonstrar meus conhecimentos na área.
 
-    Como solicitado reaproveitar imagens do site, tomei a liberdade de utilizar também outros recursos externos como por exemplo, mas não se limitando a, fontes de texto e hyperlinks.
+    Como solicitado reaproveitar imagens do site, tomei a liberdade de utilizar também outros recursos externos como por exemplo, mas não se limitando a ehyperlinks.
 
     Para aumentar a produtividade no back-end utilizei algumas bibliotecas:
         Express - para adiantar as configurações de rotas
         Ejs - para adiantar o sistema de layout
 
-    Ao preencher o formulário o usuário é redirecionado para outra página, eu gostaria de na verdade com base na resposta do servidor gerar um pop-up modal apresentando a resposta, não o fiz por questão de tempo.
-
 - Recomendações para o GrupoCard:
     Colacar as imagens do site https://www.grupocard.com.br/ na extensão webp.
     No estilo de fontes, ajustar os @font-face
+    Proteger o site contra usa de iframes por terceiros
     
 - Ferramentas que estou utilizando:
     Sistema Operacional Windows 11
